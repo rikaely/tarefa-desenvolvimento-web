@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversão de Moeda</title>
+    <script>
+        // Função que converte reais para dólares
+        function converterRealParaDolar(valorEmReais) {
+            const taxaDeCambio = 5; // 1 dólar = 5 reais
+            const valorEmDolares = valorEmReais / taxaDeCambio;
+            return valorEmDolares;
+        }
+
+        // Função chamada ao clicar no botão de conversão
+        function converter() {
+            const valorEmReais = document.getElementById("valorReais").value;
+            const valorConvertido = converterRealParaDolar(valorEmReais);
+            document.getElementById("resultadoConversao").innerText = `R$${valorEmReais} equivalem a $${valorConvertido.toFixed(2)} dólares.`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Conversão de Moeda</h1>
+    <div>
+        <label for="valorReais">Valor em Reais: </label>
+        <input type="number" id="valorReais" />
+        <button onclick="converter()">Converter</button>
+        <p id="resultadoConversao"></p>
+    </div>
+</body>
+</html>
